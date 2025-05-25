@@ -1,0 +1,10 @@
+name: cron-job
+on:
+  schedule:
+    - cron: '* * * * *'
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: every-minute
+        run: curl -X POST https://bi-cam.vercel.app/api/trigger
