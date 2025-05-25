@@ -4,10 +4,10 @@ on:
     branches:
       - main  # Chạy khi đẩy mã lên nhánh main
   schedule:
-    - cron: '* * * * *'
+    - cron: '*/5 * * * *'
 jobs:
   cron:
     runs-on: ubuntu-latest
     steps:
-      - name: every-minute
+      - name: every-five-minute
         run: curl -X POST https://bi-cam.vercel.app/api/trigger
