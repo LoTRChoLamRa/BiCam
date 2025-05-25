@@ -1,7 +1,10 @@
 name: cron-job
 on:
+  push:
+    branches:
+      - main  # Chạy khi đẩy mã lên nhánh main
   schedule:
-    - cron: '* * * * *'
+    - cron: '* * * * *'  # Chạy mỗi phút
 jobs:
   cron:
     runs-on: ubuntu-latest
